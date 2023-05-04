@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'to build the code, Maven or Gradle can be used'
+                echo 'To build the code, Maven or Gradle can be used'
             }
         }
         stage('Unit and Integration Tests') {
