@@ -20,7 +20,6 @@ pipeline {
             steps {
                 echo ' For Code Analysis, SonarQube or Checkstyle can be used.'
                 }
-            }
         }
         stage('Security Scan') {
             steps {
@@ -53,3 +52,4 @@ pipeline {
             }
         }
     }
+}
