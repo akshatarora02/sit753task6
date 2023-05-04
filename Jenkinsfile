@@ -27,7 +27,7 @@ pipeline {
             }
             post {  
                 always {
-                    emailext body: "Security scan completed with ${currentBuild.currentResult}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "Pipeline ${currentBuild.currentResult} - ${env.JOB_NAME}", attachmentsPattern: '**/*.log'
+                    emailext attachLog: true, body: "Security scan completed with ${currentBuild.currentResult}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "Pipeline ${currentBuild.currentResult} - ${env.JOB_NAME}"
                 }
             }
         }
@@ -42,7 +42,7 @@ pipeline {
             }
             post {  
                 always {
-                    emailext body: "Integration tests completed with ${currentBuild.currentResult}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "Pipeline ${currentBuild.currentResult} - ${env.JOB_NAME}", attachmentsPattern: '**/*.log'
+                    emailext attachLog: true, body: "Integration tests completed with ${currentBuild.currentResult}", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "Pipeline ${currentBuild.currentResult} - ${env.JOB_NAME}"
                 }
             }
         }
